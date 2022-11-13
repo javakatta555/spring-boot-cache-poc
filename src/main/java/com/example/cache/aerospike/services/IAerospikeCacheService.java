@@ -44,7 +44,7 @@ public interface IAerospikeCacheService {
      * @param typeReference
      * @return
      */
-    Object get(String broker,String set, String key, String bin, TypeReference typeReference);
+    Object get(String id,String set, String key, String bin, TypeReference typeReference);
 
     /**
      * Put the data map to cache for given set, given key and bin
