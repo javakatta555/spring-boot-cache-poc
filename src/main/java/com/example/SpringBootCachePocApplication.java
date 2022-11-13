@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.cache.aerospike.configuration.AerospikeClientWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
@@ -47,6 +48,12 @@ public class SpringBootCachePocApplication {
 			log.error("Error in registering Redisson bean [Cannot initialize Redisson Client]", e);
 			return null;
 		}
+	}
+
+	@Bean
+	public boolean createAeroConnection(final AerospikeClientWrapper clientWrapper) {
+		clientWrapper.creatConn();
+		return true;
 	}
 
 }
