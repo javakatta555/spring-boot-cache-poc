@@ -32,7 +32,7 @@ public class SpringBootCachePocApplication {
 			StringCodec codec = new StringCodec();
 			config.setCodec(codec);*/
 
-			//No need of security for POC but in should use at enterprise level application
+			//No need of security for POC but we should use at enterprise level application
 			/*if(!StringUtils.isBlank(REDIS_CONNECTION_PASSWORD)){
 				singleServerConfig.setPassword(REDIS_CONNECTION_PASSWORD);
 			}*/
@@ -52,7 +52,7 @@ public class SpringBootCachePocApplication {
 
 	@Bean
 	public boolean createAeroConnection(final AerospikeClientWrapper clientWrapper) {
-		clientWrapper.creatConn();
+		clientWrapper.createConn();
 		return true;
 	}
 

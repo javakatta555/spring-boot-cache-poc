@@ -16,7 +16,7 @@ public class AerospikeClientWrapper extends AerospikeConfig {
     protected AerospikeClient client;
     private ObjectMapper mapper = new ObjectMapper();
 
-    public void creatConn() {
+    public void createConn() {
         if(isAeroEnabled()){
             Host[] hosts = new Host[] {new Host(getAeroSpikeHost(), getAerospikePort())};
             setDefaultClientPolicies();

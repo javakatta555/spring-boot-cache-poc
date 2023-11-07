@@ -181,12 +181,13 @@ public class AerospikeCacheServiceImpl implements IAerospikeCacheService {
     }
 
     @Override
-    public Object get(String broker,String set, String key, String bin, TypeReference typeReference) {
+    public Object get(String id,String set, String key, String bin, TypeReference typeReference) {
         try {
             LOG.info("Aerospike cache get method");
 
             if (isCacheOn) {
                 Record record = aeroWrapper.read(set, key, bin);
+                LOG.info("record is :{}",record);
                 if (null != record && null != record.getValue(bin)) {
                     final Record finalRecord = record;
                     String string = finalRecord.getValue(bin).toString();

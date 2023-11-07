@@ -28,7 +28,7 @@ public class RedisCache implements Cache {
      */
     private RLocalCachedMap<Object, Object> map;
 
-    // The name of the cache. (Will generally be of the form 'database_entity'. Eg: turtlemint_Partner, ippb_Lead, etc)
+    // The name of the cache. (Will generally be of the form 'database_entity'. Eg: product, order, etc)
     private String name;
 
     // The type of data being stored in this cache.
